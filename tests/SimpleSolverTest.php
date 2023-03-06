@@ -25,7 +25,7 @@ class SimpleSolverTest extends TestCase
         $this->expectException(InvalidParameterException::class);
         $solver  = new SimpleSolver();
 
-        $x = 10 ** 10;
+        $x = (10 ** 9) + 1;
         $y = 5;
         $n = 12345;
 
@@ -74,7 +74,7 @@ class SimpleSolverTest extends TestCase
 
         $x = 7;
         $y = 5;
-        $n = 10 ** 10;
+        $n = (10 ** 9) + 1;
 
         $solver  = new SimpleSolver();
         $solver->solve($x, $y, $n);
