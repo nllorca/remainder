@@ -10,43 +10,73 @@ class SimpleSolverTest extends TestCase
     public function testExceptionIsRaisedForInvalidXParameterWhenMinFails()
     {
         $this->expectException(InvalidParameterException::class);
+
+        $x = 1;
+        $y = 5;
+        $n = 12345;
+
         $solver  = new SimpleSolver();
-        $solver->solve(1, 5, 12345);
+        $solver->solve($x, $y, $n);
     }
 
     public function testExceptionIsRaisedForInvalidXParameterWhenMaxFails()
     {
         $this->expectException(InvalidParameterException::class);
         $solver  = new SimpleSolver();
-        $solver->solve(10 ** 10, 5, 12345);
+
+        $x = 10 ** 10;
+        $y = 5;
+        $n = 12345;
+
+        $solver->solve($x, $y, $n);
     }
 
     public function testExceptionIsRaisedForInvalidYParameterWhenMinFails()
     {
         $this->expectException(InvalidParameterException::class);
+
+        $x = 7;
+        $y = -1;
+        $n = 12345;
+
         $solver  = new SimpleSolver();
-        $solver->solve(7, -1, 12345);
+        $solver->solve($x, $y, $n);
     }
 
     public function testExceptionIsRaisedForInvalidYParameterWhenMaxFails()
     {
         $this->expectException(InvalidParameterException::class);
+        
+        $x = 7;
+        $y = $x + 1;
+        $n = 12345;
+        
         $solver  = new SimpleSolver();
-        $solver->solve(7, 8, 12345);
+        $solver->solve($x, $y, $n);
     }
 
     public function testExceptionIsRaisedForInvalidNParameterWhenMinFails()
     {
         $this->expectException(InvalidParameterException::class);
+        
+        $x = 7;
+        $y = 5;
+        $n = $y - 1;
+
         $solver  = new SimpleSolver();
-        $solver->solve(7, 5, 4);
+        $solver->solve($x, $y, $n);
     }
 
     public function testExceptionIsRaisedForInvalidNParameterWhenMaxFails()
     {
         $this->expectException(InvalidParameterException::class);
+
+        $x = 7;
+        $y = 5;
+        $n = 10 ** 10;
+
         $solver  = new SimpleSolver();
-        $solver->solve(7, 5, 10 ** 10);
+        $solver->solve($x, $y, $n);
     }
 
     public static function solveProvider(): array
