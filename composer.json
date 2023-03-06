@@ -1,0 +1,17 @@
+{
+    "name": "app/remainder",
+    "autoload": {
+        "psr-4": {
+            "Remainder\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Nicolas Llorca",
+            "email": "nicolasllorca@gmail.com"
+        }
+    ],
+    "require-dev": {
+        "phpunit/phpunit": "^9.4"
+    }
+}
