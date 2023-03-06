@@ -14,7 +14,7 @@ abstract class AbstractSolver implements SolverInterface
     private const PARAM_X = 'X';
     private const PARAM_Y = 'Y';
     private const PARAM_N = 'N';
-    
+
     private function getInvalidParameterErroMessage(string $parameter, string $min, string $max): string
     {
         return strtr(
@@ -24,7 +24,7 @@ abstract class AbstractSolver implements SolverInterface
                 '%min' => $min,
                 '%max' => $max
             ]
-        );            
+        );
     }
 
     private function validateParameters(int $x, int $y, int $n): void
@@ -45,7 +45,7 @@ abstract class AbstractSolver implements SolverInterface
 
         if (!empty($errorMessages)) {
             throw new InvalidParameterException(implode(' | ', $errorMessages));
-        }        
+        }
     }
 
     public function solve(int $x, int $y, int $n): int

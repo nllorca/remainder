@@ -1,20 +1,20 @@
 <?php
+
 namespace Remainder;
 
 use Remainder\RemainderSolver\Contracts\SolverInterface;
 use Remainder\DataStream\Input\Contracts\InputInterface;
 use Remainder\DataStream\Output\Contracts\OutputInterface;
-use Remainder\DataStream\ValueObject\Parameters;
 use Remainder\RemainderSolver\SimpleSolver;
 use Remainder\DataStream\Input\CommandLineInput;
 use Remainder\DataStream\Output\CommandLineOutput;
 
-class App 
+class App
 {
     private InputInterface $input;
     private OutputInterface $output;
     private SolverInterface $solver;
-    
+
     public function __construct()
     {
         //Default implementation
@@ -34,7 +34,7 @@ class App
         $this->output = $output;
         return $this;
     }
-    
+
     public function setSolver(SolverInterface $solver): static
     {
         $this->solver = $solver;

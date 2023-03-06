@@ -16,7 +16,7 @@ class CommandLineInput implements InputInterface
 
     public function __construct()
     {
-        $this->inputFile ='php://stdin';
+        $this->inputFile = 'php://stdin';
     }
 
     public function setInputFile(string $inputFile): void
@@ -30,7 +30,7 @@ class CommandLineInput implements InputInterface
 
         $data = [];
 
-        fscanf($stdin, "%d\n", $numberOfCases);   
+        fscanf($stdin, "%d\n", $numberOfCases);
 
         if (is_null($numberOfCases) || $numberOfCases < self::MIN_NUMBER_OF_CASES || $numberOfCases > self::MAX_NUMBER_OF_CASES) {
             throw new InvalidInputException(strtr(

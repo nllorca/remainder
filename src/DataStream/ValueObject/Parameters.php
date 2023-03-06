@@ -2,7 +2,7 @@
 
 namespace Remainder\DataStream\ValueObject;
 
-class Parameters 
+class Parameters
 {
     private int $x;
     private int $y;

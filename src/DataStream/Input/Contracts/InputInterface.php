@@ -2,6 +2,7 @@
 
 namespace Remainder\DataStream\Input\Contracts;
 
-interface InputInterface {
+interface InputInterface
+{
     public function getInputData(): array;
 }

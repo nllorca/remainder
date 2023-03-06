@@ -1,4 +1,5 @@
 <?php
+
 namespace Remainder;
 
 use PHPUnit\Framework\TestCase;
@@ -46,11 +47,11 @@ class SimpleSolverTest extends TestCase
     public function testExceptionIsRaisedForInvalidYParameterWhenMaxFails()
     {
         $this->expectException(InvalidParameterException::class);
-        
+
         $x = 7;
         $y = $x + 1;
         $n = 12345;
-        
+
         $solver  = new SimpleSolver();
         $solver->solve($x, $y, $n);
     }
@@ -58,7 +59,7 @@ class SimpleSolverTest extends TestCase
     public function testExceptionIsRaisedForInvalidNParameterWhenMinFails()
     {
         $this->expectException(InvalidParameterException::class);
-        
+
         $x = 7;
         $y = 5;
         $n = $y - 1;
@@ -93,12 +94,11 @@ class SimpleSolverTest extends TestCase
     }
 
     /**
-    * @dataProvider solveProvider
-    */
+     * @dataProvider solveProvider
+     */
     public function testSolve(int $x, int $y, int $n, int $expected)
     {
         $solver  = new SimpleSolver();
         $this->assertSame($expected, $solver->solve($x, $y, $n));
     }
-
 }

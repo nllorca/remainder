@@ -1,4 +1,5 @@
 <?php
+
 namespace Remainder;
 
 use PHPUnit\Framework\TestCase;
@@ -9,7 +10,7 @@ class CommandLineInputTest extends TestCase
 {
     private function getDummyStdInFile(): string
     {
-        return sys_get_temp_dir(). DIRECTORY_SEPARATOR . 'php_input.txt';
+        return sys_get_temp_dir() . DIRECTORY_SEPARATOR . 'php_input.txt';
     }
 
     private function setDataInDummyStdIn($data)
@@ -43,8 +44,8 @@ class CommandLineInputTest extends TestCase
     }
 
     /**
-    * @dataProvider invalidDataLineProvider
-    */
+     * @dataProvider invalidDataLineProvider
+     */
     public function testExceptionIsRaisedForInvalidDataLine($inputText)
     {
         $this->expectException(InvalidInputException::class);
@@ -75,7 +76,8 @@ class CommandLineInputTest extends TestCase
 
         try {
             $data = $input->getInputData();
-        } catch (\Exception $exception) {}
+        } catch (\Exception $exception) {
+        }
 
         $this->assertNull($exception, 'Unexpected Exception');
     }
