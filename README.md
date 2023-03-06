@@ -11,7 +11,7 @@ composer install
 ```
 php .\index.php
 ```
-Enter the data on the command line (one by one or you can paste the whole batch).
+Enter the data on the command line (one by one or you can paste the whole batch). The results will be displayed on the command line (one line per case).
 
 ## Unit testing
 Run all tests with:
