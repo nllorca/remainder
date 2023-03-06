@@ -23,19 +23,19 @@ class App
         $this->solver = new SimpleSolver();
     }
 
-    public function setInput(InputInterface $input): static
+    public function setInput(InputInterface $input): self
     {
         $this->input = $input;
         return $this;
     }
 
-    public function setOutput(OutputInterface $output): static
+    public function setOutput(OutputInterface $output): self
     {
         $this->output = $output;
         return $this;
     }
 
-    public function setSolver(SolverInterface $solver): static
+    public function setSolver(SolverInterface $solver): self
     {
         $this->solver = $solver;
         return $this;
